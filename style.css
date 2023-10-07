@@ -3,3 +3,15 @@ h1 {
     font-size: 2rem;
     color: red;
 }
+
+.rock {
+    color: yellow;
+}
+
+.paper {
+    color: purple;
+}
+
+.scissors {
+    color: blue;
+}
