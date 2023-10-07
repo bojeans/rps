@@ -1,12 +1,19 @@
 // html skeleton
-const mainDiv = document.createElement("div");
-mainDiv.className = "main";
-document.body.appendChild(mainDiv);
+const gameOptions = document.createElement("div");
+gameOptions.className = "main";
+document.body.appendChild(gameOptions);
 
-// buttons
+const scoreCount = document.createElement("div");
+scoreCount.className = "score";
+document.body.appendChild(scoreCount);
+
+// variables
 const rockButton = document.createElement("button");
 const paperButton = document.createElement("button");
 const scissorsButton = document.createElement("button");
+const player = document.createTextNode("Player Score");
+const computer = document.createTextNode("Computer Score");
+const totalGames = document.createTextNode("Total Games Played");
 
 // logic for rock
 rockButton.textContent = "Rock";
@@ -32,6 +39,20 @@ scissorsButton.addEventListener("click", () => {
   alert("Scissors clicked!");
 });
 
-mainDiv.appendChild(rockButton);
-mainDiv.appendChild(paperButton);
-mainDiv.appendChild(scissorsButton);
+// allows to view on clientside page web browser
+gameOptions.appendChild(rockButton);
+gameOptions.appendChild(paperButton);
+gameOptions.appendChild(scissorsButton);
+
+// Game Logic
+const winningLogic = {
+  rock: "scissors",
+  paper: "rock",
+  scissors: "paper",
+};
+
+const computerOptions = Object.keys(winningLogic);
+const computerMove = () => {
+  let randomPick = Math.floor(Math.random() * computerOptions.length);
+  return computerOptions[randomPick];
+};
