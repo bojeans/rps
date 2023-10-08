@@ -71,3 +71,6 @@ const computerMove = () => {
   let randomPick = Math.floor(Math.random() * computerOptions.length);
   return computerOptions[randomPick];
 };
+
+const computerResult = computerMove();
+console.log(computerResult);
